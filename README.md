@@ -55,28 +55,28 @@ now that we declared the variables inside the dot env file, we can move to and c
     Note: check the photo "connection code" in the "connecting project" folder in this repository.
     Note 2 : follow the comments in the code to make sure the code works for you
 
-    ##----------------------------------------------------------##
-    <?php
-    use Dotenv\Dotenv;
+    
+        <?php
+        use Dotenv\Dotenv;
 
-    require '../vendor/autoload.php'; // Composer autoloader 
-    //make sure to give the right path to the autoloader file.
+        require '../vendor/autoload.php'; // Composer autoloader 
+        //make sure to give the right path to the autoloader file.
 
-    // Load .env file from the root of your project
-    $dotenv = Dotenv::createImmutable(dirname(__DIR__));
-    $dotenv->load();
-
-
-    /*Connect to the database using the enviroment variables you declared in the .eenv file, with
-    the help of $_ENV super global variable */
-    $con = mysqli_connect($_ENV['DB_SERVER'],$_ENV['DB_USERNAME'],$_ENV['DB_PASSWORD'],$_ENV['DB_NAME']);
+        // Load .env file from the root of your project
+        $dotenv = Dotenv::createImmutable(dirname(__DIR__));
+        $dotenv->load();
 
 
-    if($con){
-    echo"Connected successfully";
-    }
-    ?>
-    ##----------------------------------------------------------##
+        /*Connect to the database using the enviroment variables you declared in the .eenv file, with
+        the help of $_ENV super global variable */
+        $con = mysqli_connect($_ENV['DB_SERVER'],$_ENV['DB_USERNAME'],$_ENV['DB_PASSWORD'],$_ENV['DB_NAME']);
+
+
+        if($con){
+        echo"Connected successfully";
+        }
+        ?>
+    
 
     3- Include the connection file into the pages you want to connect with the data base using: 
     inlude("file_name"); check the photo "include connction file" in the "connecting project" folder in this repository.
@@ -90,7 +90,7 @@ you should also add vendor folder to the .gitignore file.
 
     1- Create a .gitignore file check the photo "create gitignore file" in the "git ignore" folder in this repository.
 
-    2-add the files and foleders you don't want to push, check the image **add files to git ignore** in the "git ignore folder" in this repository.
+    2-add the files and foleders you don't want to push, check the image "add files to git ignore" in the "git ignore folder" in this repository.
 
     3- DONE.
 
